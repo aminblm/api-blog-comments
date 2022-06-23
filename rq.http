@@ -1,0 +1,160 @@
+# Populate
+GET http://localhost:7313/populate HTTP/1.1
+
+# Output > {
+#   "message": "Database populated"
+# }
+
+###
+
+# Get the comments
+GET http://localhost:7313/api/v1/comments HTTP/1.1
+
+# Output > [
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is a comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "99838cf8-bf34-4932-abdd-1039cb7311c6",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 1"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "ca66a3d4-5899-4b00-8204-bbac73366169",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 2"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "0d19997c-cc33-46cc-bb5a-c0eda9068a37",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 3"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "897fedbe-5da4-46f9-92f4-08c79304c6b5",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 4"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "c5a550e3-b7dd-4e9a-9b87-608a0a8400e4",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 5"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "12168fad-a442-4ff0-a828-e6d88b80b890",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 6"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "fa8a3de3-9eb3-4d3b-912b-b54992ce291c",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 7"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "822fe221-7977-4b22-8c00-f1e2c7970282",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 8"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "5107447b-733a-46ec-b39c-e836bf453398",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 9"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "This is yet another comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "3a9d24e6-9fd4-4bd3-bf93-49c213a69a10",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "User 10"
+#   },
+#   {
+#     "article": null,
+#     "article_id": "87b02391-6f43-4668-9d12-f25625e95220",
+#     "comment": "test comment",
+#     "date_created": null,
+#     "date_modified": null,
+#     "id": "f50aec3a-0b73-40a3-8128-aa527434ba1c",
+#     "query": null,
+#     "query_class": null,
+#     "registry": null,
+#     "user": "test user"
+#   }
+# ]
+
+###
+
+# Post a comment
+POST http://localhost:7313/api/v1/comments HTTP/1.1
+content-type: application/json
+
+{
+    "comment":"test comment",
+    "user":"test user",
+    "article_id":"87b02391-6f43-4668-9d12-f25625e95220"
+}
+
+# Output > "f50aec3a-0b73-40a3-8128-aa527434ba1c"
